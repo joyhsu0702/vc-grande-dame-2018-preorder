@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>凱歌貴婦年份香檳 2018｜La Grande Dame 2018 限時預購 - 汰暄酒業</title>
+  
+  <!-- Google Fonts: Cormorant Garamond & Noto Serif TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#D4AF37',
+              goldLight: '#F3E5AB',
+              goldDark: '#997F25',
+              yellow: '#F4A61D', // 經典凱歌黃
+              dark: '#0c0c0d',
+              darker: '#060607',
+              card: '#141416',
+              border: '#2A2824'
+            }
+          },
+          fontFamily: {
+            serif: ['"Noto Serif TC"', 'serif'],
+            display: ['"Cormorant Garamond"', '"Noto Serif TC"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* 基礎與客製樣式 */
+    body {
+      background-color: #080809;
+      color: #E6E4DF;
+      font-family: 'Noto Serif TC', serif;
+      overflow-x: hidden;
+      margin-bottom: 10vh; /* 保留底部法定警語列空間 */
+    }
+
+    /* 汰暄酒業專屬字級層級規範 */
+    .hero-title {
+      font-size: clamp(38px, 5.5vw, 76px);
+      line-height: 1.15;
+    }
+    .hero-subtitle {
+      font-size: clamp(18px, 2.6vw, 36px); /* 大標之 0.48em 左右 */
+    }
+    .section-title {
+      font-size: clamp(26px, 3.2vw, 44px);
+      line-height: 1.25;
+    }
+    .statement-title {
+      font-size: clamp(24px, 3vw, 40px);
+      letter-spacing: 0.18em;
+    }
+    .bg-watermark-number {
+      font-size: clamp(60px, 12vw, 120px);
+    }
+    .bg-watermark-text {
+      font-size: clamp(80px, 18vw, 240px);
+    }
+
+    /* 奢華微光漸層背景 */
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FDF4CD 0%, #D4AF37 50%, #AA8321 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .champagne-glow {
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(0,0,0,0) 70%);
+      pointer-events: none;
+      filter: blur(40px);
+      z-index: 0;
+    }
+
+    /* 足跡路徑 SVG 容器 */
+    #trail-svg-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    /* 腳印樣式與動畫 */
+    .step-mark {
+      opacity: 0.12;
+      transition: opacity 0.4s ease, filter 0.4s ease;
+      filter: drop-shadow(0 0 0px rgba(244, 166, 29, 0));
+    }
+    .step-mark.active {
+      opacity: 0.95;
+      filter: drop-shadow(0 0 8px rgba(244, 166, 29, 0.65));
+    }
+
+    /* 固定 10vh 警語列規範 */
+    .warning-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 10vh;
+      min-height: 52px;
+      max-height: 80px;
+      background-color: #000000;
+      color: #FFFFFF;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top: 1px solid #1f1f1f;
+      letter-spacing: 0.15em;
+    }
+
+    /* 常駐洽詢按鈕 (避開底部 10vh 警語) */
+    .floating-cta {
+      position: fixed;
+      right: 20px;
+      bottom: calc(10vh + 16px);
+      z-index: 999;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.3);
+    }
+
+    /* 平滑邊框光暈卡片 */
+    .luxury-card {
+      background: linear-gradient(145deg, rgba(22, 22, 25, 0.8) 0%, rgba(12, 12, 14, 0.95) 100%);
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="relative">
+
+  <!-- 背景光暈飾底 -->
+  <div class="champagne-glow top-20 left-1/4"></div>
+  <div class="champagne-glow top-[1400px] right-10"></div>
+  <div class="champagne-glow top-[2800px] left-10"></div>
+
+  <!-- 頂部導航 -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-[#080809]/80 backdrop-blur-md border-b border-[#2A2824]/50 py-3.5 px-6">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <span class="text-brand-gold font-display text-xl tracking-widest font-semibold">TWS</span>
+        <span class="text-xs tracking-[0.2em] text-neutral-400 border-l border-neutral-700 pl-3">汰暄酒業 尊榮選品</span>
+      </div>
+      <div class="text-[10px] tracking-widest uppercase text-brand-gold/80 px-3 py-1 border border-brand-gold/30 rounded-full">
+        2018 Vintage Pre-order
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       SVG 腳印引路軌跡 (Scrollytelling Path)
+       ========================================== -->
+  <svg id="trail-svg-container" xmlns="http://www.w3.org/2000/svg">
+    <!-- 引導連接虛線 -->
+    <path id="guide-line" d="" fill="none" stroke="rgba(212, 175, 55, 0.18)" stroke-width="1.5" stroke-dasharray="4,6" />
+    
+    <!-- 腳印組將由 JS 動態生成精緻向量鞋印/足印 -->
+    <g id="footprints-group"></g>
+  </svg>
+
+  <main class="relative z-20">
+
+    <!-- ==========================================
+         第一幕：莊園晨曦 (Hero Section)
+         ========================================== -->
+    <section id="scene-1" class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative pt-24 pb-16">
+      <div class="max-w-4xl mx-auto space-y-6">
+        
+        <!-- 小標 -->
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full border border-brand-gold/40 bg-brand-gold/5">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-yellow animate-ping"></span>
+          <span class="text-[10px] tracking-[0.3em] uppercase text-brand-gold font-medium">2018 世紀年份・香檳旗艦特釀</span>
+        </div>
+
+        <!-- 大標題 -->
+        <h1 class="hero-title font-display font-medium text-white tracking-wider">
+          太陽親吻的<span class="gold-gradient-text block mt-1">世紀佳釀</span>
+        </h1>
+
+        <!-- 副標題 (約大標 0.48em) -->
+        <h2 class="hero-subtitle font-display tracking-widest text-brand-yellow/90 font-light">
+          凱歌貴婦年份香檳 2018 限時預購
+        </h2>
+
+        <p class="text-neutral-400 text-[13px] md:text-[15px] max-w-xl mx-auto leading-relaxed font-light">
+          純粹黑皮諾的極致演繹｜La Grande Dame 2018<br>
+          致敬 19 世紀香檳傳奇夫人，凝聚陽光璀璨的第 25 個年份里程碑。
+        </p>
+
+        <!-- 引導按鈕 -->
+        <div class="pt-6">
+          <a href="#scene-2" class="inline-flex items-center space-x-2 text-[11px] tracking-[0.25em] text-neutral-300 hover:text-brand-yellow uppercase px-7 py-3 border border-neutral-700 hover:border-brand-yellow/60 rounded-full transition-all duration-300 group">
+            <span>踏入莊園探索</span>
+            <span class="text-brand-gold transition-transform group-hover:translate-y-0.5">↓</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 下滑指示器 -->
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 text-neutral-500">
+        <span class="text-[9px] tracking-[0.25em] uppercase">Scroll to Explore</span>
+        <div class="w-4 h-7 border border-neutral-700 rounded-full flex justify-center p-1">
+          <div class="w-1 h-1.5 bg-brand-gold rounded-full animate-bounce"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         第二幕：風土之徑 (Terroir & Story)
+         ========================================== -->
+    <section id="scene-2" class="min-h-screen flex items-center justify-center px-6 py-28 relative">
+      <div class="max-w-4xl mx-auto w-full relative">
+        
+        <!-- 背景大浮水印數字 -->
+        <span class="absolute -top-16 -left-6 bg-watermark-number font-display font-bold text-neutral-900/60 select-none pointer-events-none">01</span>
+
+        <div class="relative luxury-card p-8 md:p-14 rounded-2xl">
+          <!-- 小標 -->
+          <p class="text-[10px] tracking-[0.3em] uppercase text-brand-gold mb-3 font-semibold">TERROIR & SUNLIGHT</p>
+          
+          <!-- 主標題 -->
+          <h3 class="section-title text-neutral-100 font-display mb-6">
+            陽光恩賜與極致風土的交織
+          </h3>
+
+          <div class="h-px w-16 bg-brand-gold/40 mb-8"></div>
+
+          <!-- 說明內文 -->
+          <p class="text-[14px] text-neutral-300 leading-[2.3] font-light text-justify">
+            2018 年是陽光極致恩賜的偉大年份，溫暖陽光賦予黑皮諾（Pinot Noir）近乎完美的成熟度與張力。高達 90% 的黑皮諾比例，交織 10% 霞多麗（Chardonnay）的靈動清亮，展現出極具層次的水果香氣、白色花香與法式奶油麵包的細緻餘韻。
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 mt-10 pt-8 border-t border-neutral-800/80">
+            <div>
+              <span class="text-[10px] text-neutral-500 tracking-widest block uppercase">Blend Ratio</span>
+              <span class="font-display text-2xl text-brand-gold">90% Pinot Noir</span>
+              <p class="text-[11px] text-neutral-400 mt-0.5">極高比例黑皮諾構建深邃骨幹</p>
+            </div>
+            <div>
+              <span class="text-[10px] text-neutral-500 tracking-widest block uppercase">Vintage Honor</span>
+              <span class="font-display text-2xl text-brand-gold">25th Edition</span>
+              <p class="text-[11px] text-neutral-400 mt-0.5">旗艦特釀歷史第 25 個紀念年份</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         第三幕：傳奇足跡 (Brand Statement)
+         ========================================== -->
+    <section id="scene-3" class="py-32 px-6 relative bg-gradient-to-b from-transparent via-[#0f0e0d] to-transparent text-center">
+      <div class="max-w-3xl mx-auto space-y-4">
+        <!-- 英文大宣言 -->
+        <h2 class="statement-title font-display text-white font-normal uppercase">
+          AUDACE & VISION DEPUIS 1805
+        </h2>
+        <!-- 中文副標 -->
+        <p class="text-[10px] tracking-[0.35em] text-brand-gold uppercase">
+          承襲兩百年無畏膽識，開創極致釀造標準
+        </p>
+        <p class="text-[13px] text-neutral-400 max-w-lg mx-auto pt-4 leading-relaxed font-light">
+          致敬 19 世紀香檳傳奇——凱歌夫人的遠見、魄力與膽識。每一道留在莊園與酒窖深處的足跡，皆銘刻著打破常規的無畏追尋。
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         第四幕：酒窖密藏 (Product Showcase & Highlights)
+         ========================================== -->
+    <section id="scene-4" class="min-h-screen flex items-center justify-center px-6 py-28 relative">
+      <div class="max-w-5xl mx-auto w-full">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center luxury-card p-8 md:p-14 rounded-2xl relative overflow-hidden">
+          
+          <!-- 背景光感裝飾 -->
+          <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-yellow/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <!-- 左側：視覺陳列區 -->
+          <div class="lg:col-span-5 flex flex-col items-center justify-center text-center p-6 bg-black/40 rounded-xl border border-neutral-800">
+            <!-- 象徵酒瓶與禮盒的極簡幾何光影 -->
+            <div class="relative w-48 h-80 flex items-center justify-center">
+              <!-- 經典亮黃禮盒外框意象 -->
+              <div class="absolute inset-x-2 inset-y-0 bg-brand-yellow/15 border-2 border-brand-yellow/70 rounded-md transform rotate-1 shadow-[0_0_30px_rgba(244,166,29,0.2)]"></div>
+              <!-- 香檳酒瓶外框意象 -->
+              <div class="relative z-10 w-24 h-72 bg-gradient-to-b from-[#1c1d1a] to-[#0a0a09] border border-brand-gold/60 rounded-t-full flex flex-col items-center justify-between py-6 px-2 shadow-2xl">
+                <div class="w-6 h-10 border-b border-brand-gold/80 bg-brand-yellow/40 rounded-t-sm"></div>
+                <div class="text-center">
+                  <span class="text-[9px] tracking-widest text-brand-gold block font-display">LA GRANDE DAME</span>
+                  <span class="text-[12px] font-bold text-white tracking-widest">2018</span>
+                </div>
+                <div class="w-12 h-6 border-t border-brand-gold/40"></div>
+              </div>
+            </div>
+            <span class="text-[11px] text-neutral-400 mt-4 tracking-wider">高雅奢華經典黃色禮盒裝</span>
+          </div>
+
+          <!-- 右側：酒款規格與亮點 -->
+          <div class="lg:col-span-7 space-y-6">
+            <div>
+              <span class="text-[10px] tracking-[0.3em] uppercase text-brand-gold font-semibold">EXCLUSIVE PRE-ORDER</span>
+              <h3 class="section-title font-display text-white mt-1">
+                凱歌貴婦年份香檳 2018
+              </h3>
+              <p class="text-[13px] text-neutral-400 font-display tracking-wider mt-1">
+                Champagne Veuve Clicquot La Grande Dame 2018
+              </p>
+            </div>
+
+            <p class="text-[16px] md:text-[18px] text-brand-yellow/90 font-display">
+              世紀偉大年份，旗艦特釀第 25 個里程碑
+            </p>
+
+            <!-- 評分勳章 -->
+            <div class="flex items-center space-x-4 py-2">
+              <div class="px-3.5 py-1.5 rounded bg-brand-gold/10 border border-brand-gold/40 flex items-center space-x-2">
+                <span class="text-[10px] text-neutral-400 font-sans uppercase">Decanter</span>
+                <span class="font-display text-base font-bold text-brand-gold">97 pts</span>
+              </div>
+              <div class="px-3.5 py-1.5 rounded bg-brand-gold/10 border border-brand-gold/40 flex items-center space-x-2">
+                <span class="text-[10px] text-neutral-400 font-sans uppercase">Wine Spectator</span>
+                <span class="font-display text-base font-bold text-brand-gold">95 pts</span>
+              </div>
+            </div>
+
+            <!-- 特色清單 -->
+            <ul class="space-y-2.5 text-[14px] text-neutral-300 font-light border-t border-b border-neutral-800/80 py-4">
+              <li class="flex items-start space-x-2">
+                <span class="text-brand-yellow mt-1">✦</span>
+                <span><strong>世紀偉大年份：</strong>2018 年陽光充沛，葡萄成熟度臻至完美。</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-brand-yellow mt-1">✦</span>
+                <span><strong>黑皮諾極致工藝：</strong>高達 90% Pinot Noir 調配，結構立體、風味豐盈。</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-brand-yellow mt-1">✦</span>
+                <span><strong>卓越品味：</strong>白色花香與法式布里歐麵包細緻餘韻，歲末年終尊榮獻禮首選。</span>
+              </li>
+            </ul>
+
+            <!-- 價格與交貨期 -->
+            <div class="flex flex-wrap items-baseline justify-between gap-4 pt-1">
+              <div>
+                <span class="text-[11px] text-neutral-400 block tracking-wider">預購尊享價</span>
+                <span class="text-[24px] font-semibold text-brand-gold font-display">$6,850</span>
+                <span class="text-[12px] text-neutral-500 ml-1">/ 瓶</span>
+              </div>
+              <div class="text-right">
+                <span class="text-[11px] text-neutral-400 block tracking-wider">預計交貨期</span>
+                <span class="text-[13px] text-neutral-300 font-medium">2026 年 12 月中旬</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         第五幕：終點典藏 (Closing & Contact)
+         ========================================== -->
+    <section id="scene-5" class="min-h-screen flex items-center justify-center px-6 py-28 relative text-center">
+      
+      <!-- 背景大浮水印字樣 -->
+      <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-watermark-text font-display font-bold text-[#111114] select-none pointer-events-none -z-10">
+        2018
+      </span>
+
+      <div class="max-w-2xl mx-auto space-y-7 relative z-10">
+        
+        <p class="text-[10px] tracking-[0.35em] uppercase text-brand-gold font-semibold">RESERVE YOUR VINTAGE</p>
+
+        <h2 class="section-title font-display text-white">
+          鑑賞傳奇，即刻珍藏
+        </h2>
+
+        <div class="h-px w-20 bg-brand-gold/50 mx-auto"></div>
+
+        <p class="text-[13px] md:text-[14px] text-neutral-400 leading-relaxed font-light">
+          世紀陽光淬鍊的第 25 款年份特釀，數量稀少，現正開放尊享預購配額。<br>
+          無論是私人窖藏、歲末宴饗或是尊榮饋贈，敬請把握珍藏契機。
+        </p>
+
+        <!-- 行動號召按鈕 -->
+        <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <!-- 1. LINE 專人預約諮詢 -->
+          <a href="https://line.me/R/ti/p/@699htlkt" target="_blank" rel="noopener noreferrer" 
+             class="w-full sm:w-auto px-8 py-3.5 bg-brand-yellow hover:bg-[#ffb433] text-black font-semibold text-[12px] tracking-[0.2em] uppercase rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(244,166,29,0.4)] flex items-center justify-center space-x-2">
+            <span>LINE 專人預約諮詢</span>
+            <span>↗</span>
+          </a>
+          <!-- 2. 撥打服務專線 -->
+          <a href="tel:0223650988" 
+             class="w-full sm:w-auto px-7 py-3.5 border border-neutral-700 hover:border-brand-gold text-neutral-300 hover:text-white text-[12px] tracking-[0.2em] uppercase rounded-full transition-all duration-300">
+            撥打服務專線
+          </a>
+        </div>
+
+        <!-- 門市聯絡資訊 -->
+        <div class="pt-10 border-t border-neutral-800/80 text-[11px] text-neutral-500 space-y-1 tracking-wider font-light">
+          <p class="text-neutral-400 font-medium">汰暄國際貿易有限公司</p>
+          <p>台北市大安區新生南路三段20號之一 1F ｜ 服務專線：02-23650988</p>
+          <p class="text-[10px] text-neutral-600 pt-2">© 2026 TWS WINE. All Rights Reserved. 限量配額，售完為止。</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       右下常駐洽詢按鈕 (避開 10vh 警語列)
+       3. 洽詢預購連結
+       ========================================== -->
+  <aside class="floating-cta">
+    <a href="https://reurl.cc/dO1Rey" target="_blank" rel="noopener noreferrer" 
+       class="flex items-center space-x-2.5 px-4 py-3 bg-[#111114]/95 border border-brand-yellow/70 hover:border-brand-yellow text-white rounded-full transition-all duration-300 hover:scale-105 group">
+      <span class="w-2 h-2 rounded-full bg-brand-yellow animate-pulse"></span>
+      <span class="text-[11px] tracking-wider text-neutral-200 group-hover:text-brand-yellow font-medium">
+        洽詢預購
+      </span>
+      <svg class="w-3.5 h-3.5 text-brand-gold transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+      </svg>
+    </a>
+  </aside>
+
+  <!-- ==========================================
+       台灣法規專用：10vh 黑底白字法定警語列
+       ========================================== -->
+  <footer class="warning-bar" aria-label="法定酒類警語">
+    <div class="w-full h-full flex items-center justify-around px-4 sm:px-8 text-center select-none font-bold">
+      <!-- 左側警語 -->
+      <span class="text-[13px] sm:text-[18px] md:text-[22px] tracking-[0.2em]">
+        未成年請勿飲酒
+      </span>
+
+      <!-- 中間：禁止酒駕標準 SVG 圖示 -->
+      <div class="flex items-center justify-center p-1" title="禁止酒駕">
+        <svg class="w-7 h-7 sm:w-9 sm:h-9 text-red-600" viewBox="0 0 100 100" fill="currentColor">
+          <!-- 外紅圓圈 -->
+          <circle cx="50" cy="50" r="46" fill="none" stroke="#DC2626" stroke-width="8"/>
+          <!-- 紅色斜線 -->
+          <line x1="18" y1="18" x2="82" y2="82" stroke="#DC2626" stroke-width="8"/>
+          <!-- 汽車與方向盤極簡造型 -->
+          <path d="M30 62 L35 48 C36 44 40 42 45 42 L55 42 C60 42 64 44 65 48 L70 62 Z" fill="#FFFFFF"/>
+          <circle cx="38" cy="65" r="4" fill="#000000"/>
+          <circle cx="62" cy="65" r="4" fill="#000000"/>
+        </svg>
+      </div>
+
+      <!-- 右側警語 -->
+      <span class="text-[13px] sm:text-[18px] md:text-[22px] tracking-[0.2em]">
+        禁止酒駕
+      </span>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       腳印生成與 GSAP ScrollTrigger 動態邏輯
+       ========================================== -->
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    /**
+     * 生成單個精緻腳印 (左腳或右腳向量)
+     */
+    function createFootprintElement(x, y, rotation, isRight) {
+      const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      g.setAttribute("class", "step-mark");
+      g.setAttribute("transform", `translate(${x}, ${y}) rotate(${rotation}) scale(0.7)`);
+      
+      // 腳印本體路徑 (鞋底+鞋跟)
+      const solePath = isRight 
+        ? "M 0,-18 C 7,-18 10,-8 9,3 C 8,11 3,16 -2,16 C -7,16 -8,11 -8,3 C -8,-9 -5,-18 0,-18 Z"
+        : "M 0,-18 C -7,-18 -10,-8 -9,3 C -8,11 -3,16 2,16 C 7,16 8,11 8,3 C 8,-9 5,-18 0,-18 Z";
+      
+      const heelPath = "M 0,22 C 6,22 7,27 6,31 C 5,34 0,35 -1,35 C -5,35 -7,33 -7,30 C -7,26 -5,22 0,22 Z";
+
+      const path1 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path1.setAttribute("d", solePath);
+      path1.setAttribute("fill", "#F4A61D");
+
+      const path2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path2.setAttribute("d", heelPath);
+      path2.setAttribute("fill", "#D4AF37");
+
+      g.appendChild(path1);
+      g.appendChild(path2);
+      return g;
+    }
+
+    /**
+     * 建立蜿蜒引導足跡與動態綁定
+     */
+    function buildFootprintTrail() {
+      const container = document.getElementById("footprints-group");
+      container.innerHTML = "";
+      
+      const windowWidth = window.innerWidth;
+      const isMobile = windowWidth < 768;
+
+      // 依據各場景錨點計算路徑控制點
+      const s1 = document.getElementById("scene-1").offsetTop + 350;
+      const s5 = document.getElementById("scene-5").offsetTop + 150;
+
+      const centerX = windowWidth / 2;
+      const swing = isMobile ? 35 : 120; // 蜿蜒振幅
+
+      // 產生由上至下的引導節點
+      const stepCount = isMobile ? 18 : 26;
+      const stepInterval = (s5 - s1) / stepCount;
+
+      const stepsData = [];
+      for (let i = 0; i <= stepCount; i++) {
+        const curY = s1 + i * stepInterval;
+        const progress = i / stepCount;
+        
+        // 使用正弦曲線計算蜿蜒 X 座標
+        const offsetX = Math.sin(progress * Math.PI * 3.5) * swing;
+        const isRight = i % 2 === 0;
+        const staggerX = isRight ? 18 : -18;
+        const finalX = centerX + offsetX + staggerX;
+        
+        // 計算旋轉切角
+        const nextOffsetX = Math.sin((progress + 0.05) * Math.PI * 3.5) * swing;
+        const angle = Math.atan2(stepInterval, nextOffsetX - offsetX) * (180 / Math.PI) - 90;
+
+        stepsData.push({ x: finalX, y: curY, rot: angle * 0.4, isRight: isRight });
+      }
+
+      // 生成 SVG 元素並註冊至 GSAP
+      stepsData.forEach((step) => {
+        const elem = createFootprintElement(step.x, step.y, step.rot, step.isRight);
+        container.appendChild(elem);
+
+        // 綁定滾動偵測，每當踏入該深度時點亮金色足跡
+        ScrollTrigger.create({
+          trigger: document.body,
+          start: () => `top+=${step.y - window.innerHeight * 0.75} top`,
+          end: () => `top+=${step.y} top`,
+          onEnter: () => elem.classList.add("active"),
+          onLeaveBack: () => elem.classList.remove("active")
+        });
+      });
+    }
+
+    // 初始化與響應式重置
+    window.addEventListener("DOMContentLoaded", () => {
+      buildFootprintTrail();
+      
+      // 卡片與文字滾動視差進場
+      gsap.utils.toArray(".luxury-card").forEach((card) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+          },
+          y: 40,
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out"
+        });
+      });
+    });
+
+    // 視窗縮放重繪軌跡
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        ScrollTrigger.refresh();
+        buildFootprintTrail();
+      }, 250);
+    });
+  </script>
+</body>
+</html>
