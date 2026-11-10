@@ -1,9 +1,14 @@
-<!DOCTYPE html>
 <html lang="zh-TW" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>凱歌貴婦年份香檳 2018｜La Grande Dame 2018 限時預購 - 汰暄酒業</title>
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="凱歌貴婦年份香檳 2018｜La Grande Dame 2018 限時預購 - 汰暄酒業">
+  <meta property="og:description" content="純粹黑皮諾的極致演繹，致敬 19 世紀香檳傳奇夫人，凝聚陽光璀璨的第 25 個年份里程碑。">
+  <meta property="og:image" content="og-image.jpg">
+  <meta property="og:type" content="website">
   
   <!-- Google Fonts: Cormorant Garamond & Noto Serif TC -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,7 +63,7 @@
       line-height: 1.15;
     }
     .hero-subtitle {
-      font-size: clamp(18px, 2.6vw, 36px); /* 大標之 0.48em 左右 */
+      font-size: clamp(18px, 2.6vw, 36px);
     }
     .section-title {
       font-size: clamp(26px, 3.2vw, 44px);
@@ -174,10 +179,7 @@
        SVG 腳印引路軌跡 (Scrollytelling Path)
        ========================================== -->
   <svg id="trail-svg-container" xmlns="http://www.w3.org/2000/svg">
-    <!-- 引導連接虛線 -->
     <path id="guide-line" d="" fill="none" stroke="rgba(212, 175, 55, 0.18)" stroke-width="1.5" stroke-dasharray="4,6" />
-    
-    <!-- 腳印組將由 JS 動態生成精緻向量鞋印/足印 -->
     <g id="footprints-group"></g>
   </svg>
 
@@ -200,7 +202,7 @@
           太陽親吻的<span class="gold-gradient-text block mt-1">世紀佳釀</span>
         </h1>
 
-        <!-- 副標題 (約大標 0.48em) -->
+        <!-- 副標題 -->
         <h2 class="hero-subtitle font-display tracking-widest text-brand-yellow/90 font-light">
           凱歌貴婦年份香檳 2018 限時預購
         </h2>
@@ -210,8 +212,16 @@
           致敬 19 世紀香檳傳奇夫人，凝聚陽光璀璨的第 25 個年份里程碑。
         </p>
 
+        <!-- 第一幕主視覺圖 (Hero Image) -->
+        <div class="pt-4 max-w-2xl mx-auto">
+          <div class="relative rounded-2xl overflow-hidden border border-brand-gold/30 shadow-[0_20px_50px_rgba(0,0,0,0.8)] group">
+            <img src="hero-sunrise.jpg" alt="凱歌莊園晨曦" class="w-full h-auto object-cover transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080809] via-transparent to-transparent opacity-60"></div>
+          </div>
+        </div>
+
         <!-- 引導按鈕 -->
-        <div class="pt-6">
+        <div class="pt-4">
           <a href="#scene-2" class="inline-flex items-center space-x-2 text-[11px] tracking-[0.25em] text-neutral-300 hover:text-brand-yellow uppercase px-7 py-3 border border-neutral-700 hover:border-brand-yellow/60 rounded-full transition-all duration-300 group">
             <span>踏入莊園探索</span>
             <span class="text-brand-gold transition-transform group-hover:translate-y-0.5">↓</span>
@@ -248,6 +258,11 @@
 
           <div class="h-px w-16 bg-brand-gold/40 mb-8"></div>
 
+          <!-- 風土照片 (Terroir Image) -->
+          <div class="mb-8 rounded-xl overflow-hidden border border-neutral-800 shadow-xl">
+            <img src="intro-terroir.jpg" alt="香檳特級園風土景致" class="w-full h-64 md:h-80 object-cover">
+          </div>
+
           <!-- 說明內文 -->
           <p class="text-[14px] text-neutral-300 leading-[2.3] font-light text-justify">
             2018 年是陽光極致恩賜的偉大年份，溫暖陽光賦予黑皮諾（Pinot Noir）近乎完美的成熟度與張力。高達 90% 的黑皮諾比例，交織 10% 霞多麗（Chardonnay）的靈動清亮，展現出極具層次的水果香氣、白色花香與法式奶油麵包的細緻餘韻。
@@ -274,7 +289,7 @@
          第三幕：傳奇足跡 (Brand Statement)
          ========================================== -->
     <section id="scene-3" class="py-32 px-6 relative bg-gradient-to-b from-transparent via-[#0f0e0d] to-transparent text-center">
-      <div class="max-w-3xl mx-auto space-y-4">
+      <div class="max-w-3xl mx-auto space-y-6">
         <!-- 英文大宣言 -->
         <h2 class="statement-title font-display text-white font-normal uppercase">
           AUDACE & VISION DEPUIS 1805
@@ -283,7 +298,13 @@
         <p class="text-[10px] tracking-[0.35em] text-brand-gold uppercase">
           承襲兩百年無畏膽識，開創極致釀造標準
         </p>
-        <p class="text-[13px] text-neutral-400 max-w-lg mx-auto pt-4 leading-relaxed font-light">
+
+        <!-- 傳奇歷史足跡意境圖 (Statement Steps Image) -->
+        <div class="my-6 max-w-lg mx-auto rounded-xl overflow-hidden border border-neutral-800 shadow-2xl">
+          <img src="statement-steps.jpg" alt="酒窖台階與傳奇足跡" class="w-full h-auto object-cover opacity-90">
+        </div>
+
+        <p class="text-[13px] text-neutral-400 max-w-lg mx-auto pt-2 leading-relaxed font-light">
           致敬 19 世紀香檳傳奇——凱歌夫人的遠見、魄力與膽識。每一道留在莊園與酒窖深處的足跡，皆銘刻著打破常規的無畏追尋。
         </p>
       </div>
@@ -300,21 +321,10 @@
           <!-- 背景光感裝飾 -->
           <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-yellow/10 rounded-full blur-3xl pointer-events-none"></div>
 
-          <!-- 左側：視覺陳列區 -->
+          <!-- 左側：酒款照片陳列區 (Collection Cellar Image) -->
           <div class="lg:col-span-5 flex flex-col items-center justify-center text-center p-6 bg-black/40 rounded-xl border border-neutral-800">
-            <!-- 象徵酒瓶與禮盒的極簡幾何光影 -->
-            <div class="relative w-48 h-80 flex items-center justify-center">
-              <!-- 經典亮黃禮盒外框意象 -->
-              <div class="absolute inset-x-2 inset-y-0 bg-brand-yellow/15 border-2 border-brand-yellow/70 rounded-md transform rotate-1 shadow-[0_0_30px_rgba(244,166,29,0.2)]"></div>
-              <!-- 香檳酒瓶外框意象 -->
-              <div class="relative z-10 w-24 h-72 bg-gradient-to-b from-[#1c1d1a] to-[#0a0a09] border border-brand-gold/60 rounded-t-full flex flex-col items-center justify-between py-6 px-2 shadow-2xl">
-                <div class="w-6 h-10 border-b border-brand-gold/80 bg-brand-yellow/40 rounded-t-sm"></div>
-                <div class="text-center">
-                  <span class="text-[9px] tracking-widest text-brand-gold block font-display">LA GRANDE DAME</span>
-                  <span class="text-[12px] font-bold text-white tracking-widest">2018</span>
-                </div>
-                <div class="w-12 h-6 border-t border-brand-gold/40"></div>
-              </div>
+            <div class="relative w-full max-w-[280px] overflow-hidden rounded-lg">
+              <img src="collection-cellar.jpg" alt="凱歌貴婦年份香檳 2018 經典禮盒裝" class="w-full h-auto object-contain rounded-lg drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)]">
             </div>
             <span class="text-[11px] text-neutral-400 mt-4 tracking-wider">高雅奢華經典黃色禮盒裝</span>
           </div>
@@ -403,6 +413,11 @@
 
         <div class="h-px w-20 bg-brand-gold/50 mx-auto"></div>
 
+        <!-- 典藏品飲氛圍圖 (Closing Lounge Image) -->
+        <div class="my-4 max-w-md mx-auto rounded-xl overflow-hidden border border-neutral-800 shadow-2xl">
+          <img src="closing-lounge.jpg" alt="香檳品鑑典藏氛圍" class="w-full h-auto object-cover">
+        </div>
+
         <p class="text-[13px] md:text-[14px] text-neutral-400 leading-relaxed font-light">
           世紀陽光淬鍊的第 25 款年份特釀，數量稀少，現正開放尊享預購配額。<br>
           無論是私人窖藏、歲末宴饗或是尊榮饋贈，敬請把握珍藏契機。
@@ -465,11 +480,8 @@
       <!-- 中間：禁止酒駕標準 SVG 圖示 -->
       <div class="flex items-center justify-center p-1" title="禁止酒駕">
         <svg class="w-7 h-7 sm:w-9 sm:h-9 text-red-600" viewBox="0 0 100 100" fill="currentColor">
-          <!-- 外紅圓圈 -->
           <circle cx="50" cy="50" r="46" fill="none" stroke="#DC2626" stroke-width="8"/>
-          <!-- 紅色斜線 -->
           <line x1="18" y1="18" x2="82" y2="82" stroke="#DC2626" stroke-width="8"/>
-          <!-- 汽車與方向盤極簡造型 -->
           <path d="M30 62 L35 48 C36 44 40 42 45 42 L55 42 C60 42 64 44 65 48 L70 62 Z" fill="#FFFFFF"/>
           <circle cx="38" cy="65" r="4" fill="#000000"/>
           <circle cx="62" cy="65" r="4" fill="#000000"/>
@@ -489,15 +501,11 @@
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    /**
-     * 生成單個精緻腳印 (左腳或右腳向量)
-     */
     function createFootprintElement(x, y, rotation, isRight) {
       const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
       g.setAttribute("class", "step-mark");
       g.setAttribute("transform", `translate(${x}, ${y}) rotate(${rotation}) scale(0.7)`);
       
-      // 腳印本體路徑 (鞋底+鞋跟)
       const solePath = isRight 
         ? "M 0,-18 C 7,-18 10,-8 9,3 C 8,11 3,16 -2,16 C -7,16 -8,11 -8,3 C -8,-9 -5,-18 0,-18 Z"
         : "M 0,-18 C -7,-18 -10,-8 -9,3 C -8,11 -3,16 2,16 C 7,16 8,11 8,3 C 8,-9 5,-18 0,-18 Z";
@@ -517,9 +525,6 @@
       return g;
     }
 
-    /**
-     * 建立蜿蜒引導足跡與動態綁定
-     */
     function buildFootprintTrail() {
       const container = document.getElementById("footprints-group");
       container.innerHTML = "";
@@ -527,14 +532,12 @@
       const windowWidth = window.innerWidth;
       const isMobile = windowWidth < 768;
 
-      // 依據各場景錨點計算路徑控制點
       const s1 = document.getElementById("scene-1").offsetTop + 350;
       const s5 = document.getElementById("scene-5").offsetTop + 150;
 
       const centerX = windowWidth / 2;
-      const swing = isMobile ? 35 : 120; // 蜿蜒振幅
+      const swing = isMobile ? 35 : 120;
 
-      // 產生由上至下的引導節點
       const stepCount = isMobile ? 18 : 26;
       const stepInterval = (s5 - s1) / stepCount;
 
@@ -543,25 +546,21 @@
         const curY = s1 + i * stepInterval;
         const progress = i / stepCount;
         
-        // 使用正弦曲線計算蜿蜒 X 座標
         const offsetX = Math.sin(progress * Math.PI * 3.5) * swing;
         const isRight = i % 2 === 0;
         const staggerX = isRight ? 18 : -18;
         const finalX = centerX + offsetX + staggerX;
         
-        // 計算旋轉切角
         const nextOffsetX = Math.sin((progress + 0.05) * Math.PI * 3.5) * swing;
         const angle = Math.atan2(stepInterval, nextOffsetX - offsetX) * (180 / Math.PI) - 90;
 
         stepsData.push({ x: finalX, y: curY, rot: angle * 0.4, isRight: isRight });
       }
 
-      // 生成 SVG 元素並註冊至 GSAP
       stepsData.forEach((step) => {
         const elem = createFootprintElement(step.x, step.y, step.rot, step.isRight);
         container.appendChild(elem);
 
-        // 綁定滾動偵測，每當踏入該深度時點亮金色足跡
         ScrollTrigger.create({
           trigger: document.body,
           start: () => `top+=${step.y - window.innerHeight * 0.75} top`,
@@ -572,11 +571,9 @@
       });
     }
 
-    // 初始化與響應式重置
     window.addEventListener("DOMContentLoaded", () => {
       buildFootprintTrail();
       
-      // 卡片與文字滾動視差進場
       gsap.utils.toArray(".luxury-card").forEach((card) => {
         gsap.from(card, {
           scrollTrigger: {
@@ -592,7 +589,6 @@
       });
     });
 
-    // 視窗縮放重繪軌跡
     let resizeTimer;
     window.addEventListener("resize", () => {
       clearTimeout(resizeTimer);
